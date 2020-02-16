@@ -7,6 +7,7 @@ Get equipped with different kinds of programming language and statistic model as
 First, we import our factor data from Fama French/Carhart 4 Factors. Second, we use Markowitz's Mean-Variance Optimization Model to identity the optimal weights. Finally, fulfilling our idea via Python and Node.
 ## Challenge
 Limited access to API, and not available requests for an available API.
+
 Files larger than 25MB:
 
 sp500_all.xlsx
