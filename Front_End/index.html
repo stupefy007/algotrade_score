@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.12.0/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;display=swap">
+    <style>
+        .dark-theme {
+            background-color: #181C30;
+        }
+
+        .dark-theme.fixed-sn .double-nav,
+        .dark-theme.fixed-sn main,
+        .dark-theme.fixed-sn footer {
+            padding-left: 15rem;
+        }
+
+        .dark-theme.fixed-sn main {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 1289px) {
+
+            .dark-theme.fixed-sn .double-nav,
+            .dark-theme.fixed-sn main,
+            .dark-theme.fixed-sn footer {
+                padding-left: 0;
+            }
+        }
+
+        @media (min-width: 1289px) {
+            .dark-theme.fixed-sn .double-nav .button-collapse {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1289px) {
+            .dark-theme.fixed-sn .double-nav .button-collapse {
+                display: block;
+                position: relative;
+                font-size: 1.4rem;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+        }
+
+        .dark-theme header {
+            border-top: 2px solid #1d8cf8;
+        }
+
+        .dark-theme header .navbar {
+            box-shadow: none;
+            background-color: #181C30;
+        }
+
+        .dark-theme .card {
+            background-color: #27293d;
+        }
+
+        .dark-theme .card .card-header {
+            background-color: #27293d;
+        }
+
+        .dark-theme .card.card-table .card-header {
+            border-bottom: none;
+        }
+
+        .dark-theme .btn.btn-sm {
+            padding: .4rem 1.5rem .25rem;
+            font-size: .75rem;
+            font-weight: 500;
+        }
+
+        .dark-theme i.icon {
+            font-size: 1.1rem;
+        }
+
+        .dark-theme i.icon.icon-blue {
+            color: #36A2EB;
+        }
+
+        .cell-small {
+            width: 1rem;
+        }
+
+        .dark-skin .side-nav .sidenav-bg:after,
+        .dark-skin .side-nav .sidenav-bg.mask-strong:after {
+            background: rgba(29, 140, 248, 0.8);
+        }
+
+        .dark-skin .side-nav .collapsible li .collapsible-header.active {
+            background-color: rgba(24, 28, 48, 0.8);
+        }
+
+        .dark-skin .side-nav .collapsible li .collapsible-header:hover {
+            background-color: rgba(24, 28, 48, 0.8);
+        }
+
+        .dark-skin .side-nav .collapsible li a:not(.collapsible-header):hover,
+        .dark-skin .side-nav .collapsible li a:not(.collapsible-header).active,
+        .dark-skin .side-nav .collapsible li a:not(.collapsible-header):active {
+            color: #67d5ff !important;
+        }
+    </style>
+</head>
+
+<body class="fixed-sn dark-skin dark-theme">
+
+
+
+
+    <!-- Double navigation -->
+    <header>
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav fixed wide sn-bg-4">
+            <ul class="custom-scrollbar">
+                <!-- Logo -->
+                <li>
+                    <div class="logo-wrapper sn-ad-avatar-wrapper">
+                        <a href="#"><img src="https://avatars3.githubusercontent.com/u/17750061?v=4"
+                                class="rounded-circle"><span>Orlando Vargas</span></a>
+                    </div>
+                </li>
+                <!-- Logo -->
+                <!-- Side navigation links -->
+                <li>
+                    <ul class="collapsible collapsible-accordion">
+                        <li><a class="collapsible-header waves-effect arrow-r active"><i
+                                    class="sv-slim-icon fas fa-chevron-right"></i> Submit blog<i
+                                    class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect active">
+                                            <span class="sv-slim"> SL </span>
+                                            <span class="sv-normal">Submit listing</span></a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> RF </span>
+                                            <span class="sv-normal">Registration form</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r"><i
+                                    class="sv-slim-icon far fa-hand-point-right"></i>
+                                Instruction<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> FB </span>
+                                            <span class="sv-normal">For bloggers</span></a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> FA </span>
+                                            <span class="sv-normal">For authors</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="sv-slim-icon fas fa-eye"></i>
+                                About<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> I </span>
+                                            <span class="sv-normal">Introduction</span></a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> MM </span>
+                                            <span class="sv-normal">Monthly meetings</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header waves-effect arrow-r"><i
+                                    class="sv-slim-icon far fa-envelope"></i> Contact
+                                me<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> F </span>
+                                            <span class="sv-normal">FAQ</span></a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">
+                                            <span class="sv-slim"> W </span>
+                                            <span class="sv-normal">Write a message</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a id="toggle" class="waves-effect"><i
+                                    class="sv-slim-icon fas fa-angle-double-left"></i>Minimize
+                                menu</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Side navigation links -->
+            </ul>
+            <div class="sidenav-bg rgba-blue-strong"></div>
+        </div>
+        <!-- Sidebar navigation -->
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+            </div>
+            <!-- Breadcrumb -->
+            <div class="breadcrumb-dn mr-auto text-white">
+
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto text-white">
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fas fa-envelope"></i> <span
+                            class="clearfix d-none d-sm-inline-block">Contact</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fas fa-comments"></i> <span
+                            class="clearfix d-none d-sm-inline-block">Support</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fas fa-user"></i> <span
+                            class="clearfix d-none d-sm-inline-block">Account</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+    <!-- Double navigation -->
+
+    <!-- Main layout -->
+    <main class="pt-3">
+
+        <div class="container-fluid">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-12 mb-4">
+
+                    <div class="card">
+                        <div class="card-body pl-0 pr-2 pb-0">
+                            <div class="float-left white-text pl-4">
+                                <p class="font-weight-light mb-1 mt-n1 text-white-50 font-small"></p>
+                                <h2 class="font-weight-light">Performance</h2>
+                            </div>
+                            <div class="btn-group float-right pr-3" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-sm btn-primary" id="fetch">Analyze Market</button>
+                            </div>
+                            <canvas id="lineChart" height="90"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-12 mb-4">
+
+                    <div class="card">
+                        <div class="card-body px-2">
+                            <div class="float-left white-text pl-4">
+                                <p class="font-weight-light mb-1 mt-n1 text-white-50 font-small">Total Sales</p>
+                                <p><i class="far fa-bell pr-2 align-text-top mt-n1 icon icon-blue"></i><span
+                                        class="font-weight-light h3">354 780</span></p>
+                            </div>
+                            <canvas id="horizontalBar" height="280"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="card">
+                        <div class="card-body px-2">
+                            <div class="float-left white-text pl-4">
+                                <p class="font-weight-light mb-1 mt-n1 text-white-50 font-small">Accuracy</p>
+                                <p><i class="far fa-paper-plane pr-2 align-text-top mt-n1 icon icon-blue"></i><span
+                                        class="font-weight-light h3">$14,500</span></p>
+                            </div>
+                            <canvas id="lineChartSecond" height="280"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="card">
+                        <div class="card-body px-2">
+                            <div class="float-left white-text pl-4">
+                                <p class="font-weight-light mb-1 mt-n1 text-white-50 font-small">Daily Sales</p>
+                                <p><i class="fas fa-truck pr-2 align-text-top mt-n1 icon icon-blue"></i><span
+                                        class="font-weight-light h3">$7,000</span></p>
+                            </div>
+                            <canvas id="barChart" height="280"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mb-4">
+
+                    <!-- Card -->
+                    <div class="card card-table">
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <div class="d-flex justify-content-start">
+                                <p class="my-2 text-white pr-3">Tasks(5)</p>
+                                <p class="my-2 text-white">Today</p>
+                            </div>
+                            <!--Dropdown primary-->
+                            <div class="dropdown mt-2">
+
+                                <!--Trigger-->
+                                <a class="dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"><i class="fas fa-cog"></i></a>
+
+                                <!--Menu-->
+                                <div class="dropdown-menu dropdown-primary">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body pt-0">
+
+                            <div class="table-responsive">
+                                <!-- Table  -->
+                                <table class="table text-white mb-0">
+
+                                    <!-- Table body -->
+                                    <tbody>
+                                        <tr>
+                                            <th class="cell-small py-0 pr-0 pl-2 align-middle">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check pb-0 pt-2 px-0 m-0">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="tableMaterialCheck2">
+                                                    <label class="form-check-label" for="tableMaterialCheck2"></label>
+                                                </div>
+                                            </th>
+                                            <td class="py-2">
+                                                <p class="mb-1 font-weight-bold">Update the Documentation</p>
+                                                <p class="mb-0">Dwuamish Head, Seattle, WA 8:47 AM</p>
+                                            </td>
+                                            <td class="cell-small align-middle">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="cell-small py-0 pr-0 pl-2 align-middle">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check pb-0 pt-2 px-0 m-0">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="tableMaterialCheck2">
+                                                    <label class="form-check-label" for="tableMaterialCheck2"></label>
+                                                </div>
+                                            </th>
+                                            <td class="py-2">
+                                                <p class="mb-1 font-weight-bold">GDPR Compliance</p>
+                                                <p class="mb-0">The GDPR is a regulation that requires businesses to
+                                                    protect the personal data
+                                                    and privacy of Europe citizens for transactions that occur within EU
+                                                    member states.</p>
+                                            </td>
+                                            <td class="cell-small align-middle">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="cell-small py-0 pr-0 pl-2 align-middle">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check pb-0 pt-2 px-0 m-0">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="tableMaterialCheck2">
+                                                    <label class="form-check-label" for="tableMaterialCheck2"></label>
+                                                </div>
+                                            </th>
+                                            <td class="py-2">
+                                                <p class="mb-1 font-weight-bold">Solve the issues</p>
+                                                <p class="mb-0">Fifty percent of all respondents said they would be more
+                                                    likely to shop at a
+                                                    company</p>
+                                            </td>
+                                            <td class="cell-small align-middle">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="cell-small py-0 pr-0 pl-2 align-middle">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check pb-0 pt-2 px-0 m-0">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="tableMaterialCheck5">
+                                                    <label class="form-check-label" for="tableMaterialCheck5"></label>
+                                                </div>
+                                            </th>
+                                            <td class="py-2">
+                                                <p class="mb-1 font-weight-bold">Release v2.0.0</p>
+                                                <p class="mb-0">Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM</p>
+                                            </td>
+                                            <td class="cell-small align-middle">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="cell-small py-0 pr-0 pl-2 align-middle">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check pb-0 pt-2 px-0 m-0">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="tableMaterialCheck6">
+                                                    <label class="form-check-label" for="tableMaterialCheck6"></label>
+                                                </div>
+                                            </th>
+                                            <td class="py-2">
+                                                <p class="mb-1 font-weight-bold">Export the processed files</p>
+                                                <p class="mb-0">The report also shows that consumers will not easily
+                                                    forgive a company once a
+                                                    breach exposing their personal data occurs.</p>
+                                            </td>
+                                            <td class="cell-small align-middle">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="cell-small py-0 pr-0 pl-2 align-middle">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check pb-0 pt-2 px-0 m-0">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="tableMaterialCheck7">
+                                                    <label class="form-check-label" for="tableMaterialCheck7"></label>
+                                                </div>
+                                            </th>
+                                            <td class="py-2">
+                                                <p class="mb-1 font-weight-bold">Arival at export process</p>
+                                                <p class="mb-0">Capitol Hill, Seattle, WA 12:34 AM</p>
+                                            </td>
+                                            <td class="cell-small align-middle">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!-- Table body -->
+                                </table>
+                                <!-- Table  -->
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6 mb-4">
+
+                    <!-- Card -->
+                    <div class="card card-table">
+
+                        <div class="card-header">
+                            <h5 class="my-2 text-white">Simple Trade</h5>
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body pt-1">
+
+                            <div class="table-responsive">
+                                <table class="table text-white  mb-0">
+                                    <thead class>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Symbol</th>
+                                            <th>Purchase Price</th>
+                                            <th class="text-center">Total Own</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tesla</td>
+                                            <td>TSLA</td>
+                                            <td>Oud-Turnhout</td>
+                                            <td class="text-center">$36,738</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Apple</td>
+                                            <td>AAPL</td>
+                                            <td>$45,000</td>
+                                            <td class="text-center">$23,789</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Microsoft</td>
+                                            <td>MSFT</td>
+                                            <td>Baileux</td>
+                                            <td class="text-center">$56,142</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Amazon</td>
+                                            <td>AMZN</td>
+                                            <td>Overland Park</td>
+                                            <td class="text-center">$38,735</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Netflix</td>
+                                            <td>NFLX</td>
+                                            <td>Feldkirchen in K&#xE4;rnten</td>
+                                            <td class="text-center">$63,542</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NVIDIA</td>
+                                            <td>NVDA</td>
+                                            <td>Gloucester</td>
+                                            <td class="text-center">$78,615</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coca-Cola</td>
+                                            <td>KO</td>
+                                            <td>Gloucester</td>
+                                            <td class="text-center">$98,615</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+
+    </main>
+    <!-- Main layout -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.12.0/js/mdb.min.js"></script>
+    <script>$(document).ready(function () {
+            // SideNav Button Initialization
+            $(".button-collapse").sideNav({
+                slim: true,
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+
+        // Chart customizer
+        (function (global) {
+
+            var Samples = global.Samples || (global.Samples = {});
+            var Color = global.Color;
+
+            Samples.utils = {
+                // Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
+                srand: function (seed) {
+                    this._seed = seed;
+                },
+
+                rand: function (min, max) {
+                    var seed = this._seed;
+                    min = min === undefined ? 0 : min;
+                    max = max === undefined ? 1 : max;
+                    this._seed = (seed * 9301 + 49297) % 233280;
+                    return min + (this._seed / 233280) * (max - min);
+                },
+
+                numbers: function (config) {
+                    var cfg = config || {};
+                    var min = cfg.min || 0;
+                    var max = cfg.max || 1;
+                    var from = cfg.from || [];
+                    var count = cfg.count || 8;
+                    var decimals = cfg.decimals || 8;
+                    var continuity = cfg.continuity || 1;
+                    var dfactor = Math.pow(10, decimals) || 0;
+                    var data = [];
+                    var i, value;
+
+                    for (i = 0; i < count; ++i) {
+                        value = (from[i] || 0) + this.rand(min, max);
+                        if (this.rand() <= continuity) {
+                            data.push(Math.round(dfactor * value) / dfactor);
+                        } else {
+                            data.push(null);
+                        }
+                    }
+
+                    return data;
+                },
+
+                labels: function (config) {
+                    var cfg = config || {};
+                    var min = cfg.min || 0;
+                    var max = cfg.max || 100;
+                    var count = cfg.count || 8;
+                    var step = (max - min) / count;
+                    var decimals = cfg.decimals || 8;
+                    var dfactor = Math.pow(10, decimals) || 0;
+                    var prefix = cfg.prefix || '';
+                    var values = [];
+                    var i;
+
+                    for (i = min; i < max; i += step) {
+                        values.push(prefix + Math.round(dfactor * i) / dfactor);
+                    }
+
+                    return values;
+                },
+
+                months: function (config) {
+                    var cfg = config || {};
+                    var count = cfg.count || 12;
+                    var section = cfg.section;
+                    var values = [];
+                    var i, value;
+
+                    for (i = 0; i < count; ++i) {
+                        value = MONTHS[Math.ceil(i) % 12];
+                        values.push(value.substring(0, section));
+                    }
+
+                    return values;
+                },
+
+                color: function (index) {
+                    return COLORS[index % COLORS.length];
+                },
+
+                transparentize: function (color, opacity) {
+                    var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+                    return Color(color).alpha(alpha).rgbString();
+                }
+            };
+
+            // DEPRECATED
+            window.randomScalingFactor = function () {
+                return Math.round(Samples.utils.rand(40, 120));
+            };
+
+            // INITIALIZATION
+
+            Samples.utils.srand(Date.now());
+
+        }(this));
+
+        // Line chart
+        var ctxL = document.getElementById("lineChart").getContext('2d');
+        var gradientFill = ctxL.createLinearGradient(0, 0, 0, 250);
+        gradientFill.addColorStop(0, "rgba(29, 140, 248, 1)");
+        gradientFill.addColorStop(1, "rgba(29, 140, 248, 0.1)");
+
+        var config = {
+            type: 'line',
+            data: {
+                labels: ['JAN', '', '', '', 'FEB', '', '', '', 'MAR', '', '', '', 'APR', '', '', '',
+                    'MAY', '', '', '', 'JUN', '', '', '', 'JUL', '', '', '', 'AUG', '', '', '',
+                    'SEP', '', '', '', 'OCT', '', '', '', 'NOV', '', '', '', 'DEC', '', '', ''],
+                // This is the beginning points on the graph, it's all made up. Create an array with the correct data from an DataProvider. 
+                datasets: [{
+                    data: [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100, 50, 87, 41, 60, 45, 69,
+                        99, 102, 56, 78, 80, 43, 56, 70, 55, 65, 67, 70, 50, 45, 43, 40, 45, 56, 70, 60,
+                        40, 54, 60, 50, 40, 60, 56, 40, 43, 44],
+                    backgroundColor: gradientFill,
+                    borderColor: [
+                        '#1d8cf8',
+                    ],
+                    borderWidth: 2,
+                    pointBackgroundColor: "#1d8cf8",
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false,
+                },
+                title: {
+                    display: true,
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                        },
+                        ticks: {
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                        },
+                        ticks: {
+                            min: 40,
+                            max: 120,
+                            padding: 0,
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        },
+                        gridLines: {
+                            display: false,
+                        }
+                    }]
+                }
+            }
+        };
+
+        window.onload = function () {
+            var ctxL = document.getElementById("lineChart").getContext('2d');
+            window.myLine = new Chart(ctxL, config);
+        };
+
+        document.getElementById('fetch').addEventListener('click', function () {
+            config.data.datasets.forEach(function (datase) {
+                dataset.data = dataaset.data.map(function () {
+                    return randomScalingFactor();
+                })
+            })
+        })
+
+        // This code here will need to import the actual data that we got from the algorithm.
+        document.getElementById('fetch').addEventListener('click', function () {
+            config.data.datasets.forEach(function (dataset) {
+                dataset.data = dataset.data.map(function () {
+                    return randomScalingFactor();
+                });
+
+            });
+            window.myLine.update();
+        });
+
+        var ctxY = document.getElementById("horizontalBar").getContext('2d');
+        var myLineChart = new Chart(ctxY, {
+            type: "horizontalBar",
+            data: {
+                labels: ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+                datasets: [{
+                    data: [105, 95, 85, 100, 115, 125],
+                    fill: false,
+                    borderColor: ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+                        "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: false,
+                            min: 50,
+                            max: 130,
+                            padding: 0,
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        },
+                    }]
+                }
+            }
+        });
+
+        // Line
+        var ctxY = document.getElementById("lineChartSecond").getContext('2d');
+        var gradientFill = ctxY.createLinearGradient(0, 0, 0, 250);
+        gradientFill.addColorStop(0, "rgba(29, 140, 248, 1)");
+        gradientFill.addColorStop(1, "rgba(29, 140, 248, 0.1)");
+        var myLineChart = new Chart(ctxY, {
+            type: 'line',
+            data: {
+                labels: ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+                datasets: [{
+                    label: "My Second dataset",
+                    data: [80, 100, 70, 80, 120, 80],
+                    backgroundColor: gradientFill,
+                    borderColor: [
+                        '#1d8cf8',
+                    ],
+                    borderWidth: 2,
+                    pointBackgroundColor: "#1d8cf8",
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            min: 60,
+                            max: 130,
+                            padding: 0,
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        },
+                        gridLines: {
+                            display: false,
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Bar
+        var ctxB = document.getElementById("barChart").getContext('2d');
+        var myBarChart = new Chart(ctxB, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor: 'rgba(255, 255, 255, .5)'
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
