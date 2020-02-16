@@ -4,11 +4,15 @@ From a historical perspective, Mercantilism was prevailing in the 18th century b
 ## Takeaway
 Get equipped with different kinds of programming language and statistic model as well as the classic research papers in interdiscilinary domain.
 ## How
-First, we import our factor data from Fama French/Carhart 4 Factors. Second, we use Markowitz's Mean-Variance Optimization Model to identity the optimal weights. Finally, fulfilling our idea via Python, html and Javascript.
+First, we import our factor data from Fama French/Carhart 4 Factors. Second, we use Markowitz's Mean-Variance Optimization Model to identity the optimal weights. Finally, fulfilling our idea via Python and Node.
 ## Challenge
 Limited access to API, and not available requests for an available API.
 Files larger than 25MB:
+
 sp500_all.xlsx
+
 https://stonybrook365-my.sharepoint.com/:x:/g/personal/haixiang_zhu_stonybrook_edu/EUbh5JBzH-dCnVjmsBi31NEBQTnN4ixY79KnEYFyRhc54w?e=3itmZU
+
 scoring.xlsx
+
 https://stonybrook365-my.sharepoint.com/:x:/g/personal/haixiang_zhu_stonybrook_edu/EWX50CD_iGxLltI3G3kCmlMBCtZUZIruSHKb0ulPGM-Muw?e=RSSBLI
